@@ -10,6 +10,7 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/seetohjinwei/linker/page"
 	"github.com/seetohjinwei/linker/url"
 	yaml "github.com/seetohjinwei/linker/yamlparser"
 )
@@ -37,28 +38,30 @@ func handleLinks(mux *http.ServeMux, links []url.Url) {
 }
 
 const defaultYaml = "links.yaml"
+const defaultPage = "bin/index.html"
 const port = ":8085"
 
-var filePath string
+var yamlFilePath string
+var pageFilePath string
 
 func getFlags() {
-	flag.StringVar(&filePath, "data", defaultYaml, "file path for links, see 'links.yaml' for an example")
+	flag.StringVar(&yamlFilePath, "data", defaultYaml, "file path for links, see 'links.yaml' for an example")
+	flag.StringVar(&pageFilePath, "main", defaultPage, "file path for generated main page")
 	flag.Parse()
 }
 
 func main() {
 	getFlags()
 
-	mux := http.NewServeMux()
+	links := generateLinks(yamlFilePath)
 
+	page.BuildAndGenerate(links, pageFilePath)
+
+	mux := http.NewServeMux()
 	// Everything else routes here.
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		content := "URL Shortener!"
-		w.Write([]byte(content))
+		http.ServeFile(w, r, defaultPage)
 	})
-
-	links := generateLinks(filePath)
-
 	handleLinks(mux, links)
 
 	log.Printf("Starting on port: %v", port)
