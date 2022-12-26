@@ -11,7 +11,7 @@ https://link.jinwei.dev/
 To update the links, just update `links.yaml` and re-build the application :)
 
 ```sh
-go build -o bin/links && ./links
+go build -o bin/links && bin/links
 
 go test ./...
 ```
