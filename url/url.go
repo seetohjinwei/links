@@ -3,6 +3,7 @@ package url
 type Url struct {
 	Short string
 	Full  string
+	Hide  bool
 }
 
 func RemoveDuplicates(in []Url) []Url {

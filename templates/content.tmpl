@@ -3,7 +3,9 @@
     <div class="container">
         <h1 class="title">Jin Wei</h1>
         <ul class="ls">{{range $_, $link := .}}
+            {{if not $link.Hide}}
             <li><a href={{$link.Full}}>{{$link.Short}}</a></li>{{end}}
+            {{end}}
         </ul>
     </div>
 </div>

@@ -10,6 +10,7 @@ import (
 type T struct {
 	Shorts []string `yaml:"shorts"`
 	Full   string   `yaml:"full"`
+	Hide   bool     `yaml:"hide"`
 }
 
 func Parse(data []byte) []url.Url {
@@ -23,7 +24,7 @@ func Parse(data []byte) []url.Url {
 
 	for _, t := range ts {
 		for _, short := range t.Shorts {
-			link := url.Url{Short: short, Full: t.Full}
+			link := url.Url{Short: short, Full: t.Full, Hide: t.Hide}
 			links = append(links, link)
 		}
 	}

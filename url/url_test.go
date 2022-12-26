@@ -14,26 +14,26 @@ func TestRemoveDuplicates(t *testing.T) {
 		{
 			name: "no dupes",
 			data: []Url{
-				{"a", "a"},
-				{"b", "b"},
-				{"c", "c"},
+				{Short: "a", Full: "a"},
+				{Short: "b", Full: "b"},
+				{Short: "c", Full: "c"},
 			},
 			want: []Url{
-				{"a", "a"},
-				{"b", "b"},
-				{"c", "c"},
+				{Short: "a", Full: "a"},
+				{Short: "b", Full: "b"},
+				{Short: "c", Full: "c"},
 			},
 		},
 		{
 			name: "have dupes",
 			data: []Url{
-				{"a", "a"},
-				{"b", "a"},
-				{"c", "c"},
+				{Short: "a", Full: "a"},
+				{Short: "b", Full: "a"},
+				{Short: "c", Full: "c"},
 			},
 			want: []Url{
-				{"a", "a"},
-				{"c", "c"},
+				{Short: "a", Full: "a"},
+				{Short: "c", Full: "c"},
 			},
 		},
 	}

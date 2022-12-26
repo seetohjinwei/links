@@ -53,6 +53,17 @@ func TestParse(t *testing.T) {
 				{Short: "a3", Full: "full_a"},
 			},
 		},
+		{
+			name: "hide",
+			data: `
+- shorts: [a]
+  full: a
+  hide: true
+`,
+			want: []url.Url{
+				{Short: "a", Full: "a", Hide: true},
+			},
+		},
 	}
 
 	for _, test := range tests {

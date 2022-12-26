@@ -2,6 +2,9 @@
   full: https://jinwei.dev
 - shorts: [blog]
   full: https://jinwei.dev/blog/
+- shorts: [notes]
+  full: https://jinwei.dev/blog/#notes/
+  hide: true
 - shorts: [github]
   full: https://github.com/seetohjinwei/
 - shorts: [linkedin]
@@ -14,3 +17,4 @@
   full: https://repostats.jinwei.dev
 - shorts: [links]
   full: https://link.jinwei.dev
+  hide: true
