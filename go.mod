@@ -1,4 +1,4 @@
-module github.com/seetohjinwei/linker
+module github.com/seetohjinwei/links
 
 go 1.19
 

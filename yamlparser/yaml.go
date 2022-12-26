@@ -3,7 +3,7 @@ package yaml
 import (
 	"log"
 
-	"github.com/seetohjinwei/linker/url"
+	"github.com/seetohjinwei/links/url"
 	"gopkg.in/yaml.v3"
 )
 

@@ -10,9 +10,9 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/seetohjinwei/linker/page"
-	"github.com/seetohjinwei/linker/url"
-	yaml "github.com/seetohjinwei/linker/yamlparser"
+	"github.com/seetohjinwei/links/page"
+	"github.com/seetohjinwei/links/url"
+	yaml "github.com/seetohjinwei/links/yamlparser"
 )
 
 func generateLinks(filePath string) []url.Url {

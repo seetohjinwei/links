@@ -10,7 +10,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/seetohjinwei/linker/url"
+	"github.com/seetohjinwei/links/url"
 )
 
 // Generate the page's content.

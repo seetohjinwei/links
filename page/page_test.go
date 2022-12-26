@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/seetohjinwei/linker/url"
+	"github.com/seetohjinwei/links/url"
 )
 
 func TestGenerate(t *testing.T) {
