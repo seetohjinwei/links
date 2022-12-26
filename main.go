@@ -39,7 +39,7 @@ func handleLinks(mux *http.ServeMux, links []url.Url) {
 }
 
 const defaultYaml = "links.yaml"
-const defaultPage = "bin/index.html"
+const defaultPage = "public/index.html"
 const port = ":8085"
 
 var yamlFilePath string
@@ -70,9 +70,7 @@ func main() {
 
 	mux := http.NewServeMux()
 	// Everything else routes here.
-	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, defaultPage)
-	})
+	mux.Handle("/", http.FileServer(http.Dir("public")))
 	handleLinks(mux, links)
 
 	log.Printf("Starting on port: %v", port)
