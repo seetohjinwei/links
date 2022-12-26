@@ -1,0 +1,10 @@
+{{define "content" -}}
+<div class="wrapper">
+    <div class="container">
+        <h1 class="title">Jin Wei</h1>
+        <ul class="ls">{{range $_, $link := .}}
+            <li><a href={{$link.Full}}>{{$link.Short}}</a></li>{{end}}
+        </ul>
+    </div>
+</div>
+{{end}}

@@ -1,0 +1,7 @@
+{{define "test" -}}
+<div>
+    <ul>{{range $_, $link := .}}
+        <li><a href={{$link.Full}}>{{$link.Short}}</a></li>{{end}}
+    </ul>
+</div>
+{{end}}
