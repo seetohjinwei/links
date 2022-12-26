@@ -1,12 +1,16 @@
 - shorts: [me, personal, portfolio]
   full: https://jinwei.dev
-- shorts: [tm, task-manager]
-  full: https://tm.jinwei.dev
-- shorts: [organius, orbital]
-  full: https://organius.jinwei.dev
-- shorts: [repostats]
-  full: https://repostats.jinwei.dev
+- shorts: [blog]
+  full: https://jinwei.dev/blog/
 - shorts: [github]
   full: https://github.com/seetohjinwei/
 - shorts: [linkedin]
   full: https://www.linkedin.com/in/seetohjinwei/
+- shorts: [organius, orbital]
+  full: https://organius.jinwei.dev
+- shorts: [task-manager, tm]
+  full: https://tm.jinwei.dev
+- shorts: [repostats]
+  full: https://repostats.jinwei.dev
+- shorts: [links]
+  full: https://link.jinwei.dev
