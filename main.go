@@ -9,6 +9,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"path/filepath"
 
 	"github.com/seetohjinwei/links/page"
 	"github.com/seetohjinwei/links/url"
@@ -50,8 +51,18 @@ func getFlags() {
 	flag.Parse()
 }
 
+func makeAbsolutePaths(path string) string {
+	absFilePath, err := filepath.Abs(path)
+	if err != nil {
+		log.Fatalf("error file not found %q: %v", yamlFilePath, err)
+	}
+	return absFilePath
+}
+
 func main() {
 	getFlags()
+	yamlFilePath = makeAbsolutePaths(yamlFilePath)
+	pageFilePath = makeAbsolutePaths(pageFilePath)
 
 	links := generateLinks(yamlFilePath)
 
